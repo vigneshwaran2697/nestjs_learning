@@ -1,0 +1,34 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+input CreatePostInput {
+  postName: String!
+  userId: String!
+}
+
+input CreateUserInputs {
+  fullname: String!
+}
+
+type Mutation {
+  createPost(createPostInput: CreatePostInput!): Post!
+  createUser(createUserInputs: CreateUserInputs!): User!
+}
+
+type Post {
+  id: String!
+  name: String!
+  user: User!
+  userId: String!
+}
+
+type Query {
+  getUserById(id: String!): User!
+}
+
+type User {
+  fullname: String!
+  id: String!
+  post: [Post!]
+}
