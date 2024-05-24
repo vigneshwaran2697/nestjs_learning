@@ -2,7 +2,7 @@ import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
 import { NestExpressApplication } from '@nestjs/platform-express';
 const port = 4000;
-async function App() {
+async function NestApplication() {
   try {
     const app = await NestFactory.create<NestExpressApplication>(AppModule);
     await app.listen(port);
@@ -11,4 +11,4 @@ async function App() {
     console.log(`Error starting server!`);
   }
 }
-App();
+NestApplication();
