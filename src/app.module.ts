@@ -5,10 +5,9 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { DatabaseModule } from './database/database.module';
 import dbConfig from './database/db.config';
-import { PostModule } from './post/post.module';
-import { UserModule } from './user/user.module';
 import { ApolloDriver, ApolloDriverConfig } from '@nestjs/apollo';
 import { GraphQLDate } from 'graphql-scalars';
+import { ContactModule } from './contact/contact.module';
 
 @Module({
   imports: [
@@ -27,9 +26,8 @@ import { GraphQLDate } from 'graphql-scalars';
       isGlobal: true,
       load: [dbConfig],
     }),
-    UserModule,
-    PostModule,
     DatabaseModule,
+    ContactModule,
   ],
   controllers: [AppController],
   providers: [AppService],
