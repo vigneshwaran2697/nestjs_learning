@@ -15,7 +15,7 @@ export enum LinkPrecedence {
 }
 
 @Entity({ name: 'contact' })
-@Unique('phone_email_unique', ['email', 'phoneNumber'])
+// @Unique('phone_email_unique', ['email', 'phoneNumber'])
 export class Contact {
   @PrimaryGeneratedColumn('increment', { name: 'c_id' })
   id: number;
@@ -26,7 +26,7 @@ export class Contact {
   @Column({ name: 'c_email', nullable: false })
   email: string;
 
-  @Column({ name: 'c_linked_id', type: 'int'})
+  @Column({ name: 'c_linked_id', type: 'int', nullable: true})
   linkedId: number;
 
   @Column({
