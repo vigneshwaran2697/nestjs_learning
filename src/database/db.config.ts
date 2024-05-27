@@ -21,7 +21,7 @@ export default registerAs('typeOrmConfig', async () => {
       migrationsDir: __dirname + '/../migrations',
     },
     synchronize: dbSync,
-    logging: !!process.env.DB_LOGGING,
+    logging: true,
     pool: {
       max: 25,
       min: 1,
