@@ -4,7 +4,6 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { DatabaseModule } from './database/database.module';
 import dbConfig from './database/db.config';
-import { ContactModule } from './contact/contact.module';
 
 @Module({
   imports: [
@@ -14,7 +13,6 @@ import { ContactModule } from './contact/contact.module';
       load: [dbConfig],
     }),
     DatabaseModule,
-    ContactModule,
   ],
   controllers: [AppController],
   providers: [AppService],
